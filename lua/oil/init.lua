@@ -569,7 +569,6 @@ M.select = function(opts, callback)
       vim.notify(err, vim.log.levels.ERROR)
     end
     if callback then
-      callback(err)
     end
   end
   if not opts.split and (opts.horizontal or opts.vertical) then
@@ -586,14 +585,7 @@ M.select = function(opts, callback)
   if not adapter then
     return finish("Not an oil buffer")
   end
-  print(
-    "0 buf name:",
-    vim.api.nvim_buf_get_name(0),
-    "current bufnr:",
-    vim.api.nvim_get_current_buf(),
-    "current buffer name:",
-    vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
-  )
+  print("0 buf name:",vim.api.nvim_buf_get_name(0),"current bufnr:",vim.api.nvim_get_current_buf(),"current buffer name:",vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()))
 
   local visual_range = util.get_visual_range()
 
