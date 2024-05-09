@@ -548,6 +548,7 @@ end
 ---    close boolean Close the original oil buffer once selection is made
 ---@param callback nil|fun(err: nil|string) Called once all entries have been opened
 M.select = function(opts, callback)
+  print("STARTING SELECT")
   local cache = require("oil.cache")
   local config = require("oil.config")
   local constants = require("oil.constants")
